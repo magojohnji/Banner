@@ -40,9 +40,11 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: |
+          ./gradlew build
+          ls
 
-      - name: Upload KernelSU and Magisk mixed boot image
+      - name: Upload 
         uses: actions/upload-artifact@v3
         with:
           name: "${{env.RELEASE_NAME}}"
